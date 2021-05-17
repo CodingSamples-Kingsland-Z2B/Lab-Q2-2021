@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Parisienne&display=swap');
+
+h1 {
+    font-family: "Great Vibes",cursive;
+    text-shadow: 2px 2px red;
+}
+
+body {
+    background-color: rgb(252, 239, 185);
+}
+
+h2.menu-title {
+    font-style: italic;
+   
+}
+
+div.menu{
+    font-family: "Parisienne";
+    margin: 10px;
+    padding:15px;
+
+    border: 5px solid black;
+    border-radius: 0.5rem;
+
+    background-color: rgba(255, 127, 80,0.5);
+    position: fixed;
+}
+
+
+table, th, td {
+    border: 2px solid orange;
+}
+
+.oddRows {
+    background-color: orange;
+}
+
+/* 
+    alternate if you wanna try with the psuedo code.
+tr:nth-child(odd){
+    background-color: orange;
+} */
+
+ /* 
+    this will also highlight the heading row
+    td:hover {
+    background-color: black;
+    color: white;
+} */
+
+
+.highlight:hover{
+        background-color: black;
+        color: white;
+    
+}
+
+a {
+    position: fixed;
+    bottom: 0;
+
+    background-color: lawngreen;
+    color: darkgreen;
+    border: 1px solid limegreen;
+    border-radius: 5px;
+    text-shadow: 0px 1px white;
+
+    display: block;
+    padding: 10px;
+
+    box-shadow: 0 1px 1px lightgreen, inset 0 1px 0 honeydew;
+}
+a.toHome{
+    width: 42px;
+}
+a.toCalories{
+    width: 100px;
+}
