@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+
+	</head>
+	<body>
+		<div id="app"></div>
+
+		<!-- imports handlebars -->
+		<script src="../node_modules/handlebars/dist/handlebars.min.js"></script>
+		<!-- imports our data from contacts.js (stand in for the db) -->
+		<!-- <script src="../contacts.js"></script> -->
+
+		
+		<script>
+			
+		</script>
+		<!-- Import From Firebase from the global route -->
+		
+		<!-- Handlebars template -->
+		<script id="template" type="text/x-handlebars-template">
+			<!-- for loop through the data that we got from contacts.js -->
+			{{#each contacts}}
+				<div class="contact card">
+					<div><i class="far fa-user-circle gravatar"></i></div>
+					<!-- where we add the obj data from the individual contact -->
+					<div class="info">
+						<h2>Name: {{name}}</h2>
+						<button class="detailsBtn">Details</button>
+						<div class="details" id="{{id}}">
+							<p>Phone number: {{phoneNumber}}</p>
+							<p>Email: {{email}}</p>
+						</div>
+					</div>
+				</div>
+			{{/each}}
+		</script>
+    
+		<!-- Actualize the Template and get it rendered on the html -->
+		<!-- <script type="text/javascript">
+			// import our data 
+			// From Firebase from the contacts route
+			//GET the data from our firebase DB 
+			fetch("https://my-contacts-e32b7-default-rtdb.firebaseio.com/contacts.json")
+				.then(function(response){
+					return response.json();
+				})
+				.then(function(contacts){
+					// get the template as a handlebars string
+					let src = document.getElementById("template").innerHTML;
+					//compile the handlebars so that it is ready to take in the data from our sourse
+					//compile returns a function that will accept the data
+					let template = Handlebars.compile(src);
+					//console.log(template);
+					console.log(contacts);
+					//take in our data and put in into an object for the handlebars to put on the page
+					let data = {
+						contacts,
+					};
+					/*
+						contacts:[
+							{
+
+							},
+						]
+					*/
+					//get the html on the page
+					let container = document.getElementById("app");
+
+					//translates the template with the data to html code
+					let html = template(data);
+
+					//put the html code on the page
+					container.innerHTML = html;
+				})
+				.catch((err)=>{
+					console.log(err)
+				})
+			
+		</script> -->
+		<!-- Actualize the Template and get it rendered on the html MK2 -->
+		<script>
+			//GET the data from our firebase DB 
+			fetch("https://my-contacts-e32b7-default-rtdb.firebaseio.com/.json")
+				.then(function(response){
+					return response.json();
+				})
+				.then(function(data){
+					// get the template as a handlebars string
+					let src = document.getElementById("template").innerHTML;
+					//compile the handlebars so that it is ready to take in the data from our sourse
+					//compile returns a function that will accept the data
+					let template = Handlebars.compile(src);
+					//console.log(template);
+					console.log(data);
+					/**
+					 * {
+					 * 	contacts:[
+					 * 		{
+					 * 			...
+					 * 		},
+					 * 	]
+					 * }
+					 * */			
+					//get the html on the page
+					let container = document.getElementById("app");
+
+					//translates the template with the data to html code
+					let html = template(data);
+
+					//put the html code on the page
+					container.innerHTML = html;
+				})
+				.catch((err)=>{
+					console.log(err)
+				})
+		</script>
+	</body>
+</html>
