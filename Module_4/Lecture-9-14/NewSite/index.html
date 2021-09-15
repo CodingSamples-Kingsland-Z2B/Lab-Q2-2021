@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav id="nav">
+        <a id="homeRout" href="#home" style="display: none;">Home</a>
+        <a id="loginRout" href="#login">Log In</a>
+        
+    </nav>
+
+    
+    <h1 id="home">Home Section</h1>
+   
+    <div id="login" style="display: none;">
+        <form action="#">
+            <label>Username</label>
+            <input name="username" type="text">
+            <label for="password"></label>
+            <input name="password" type="password">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+   
+    <script src="js/app.js"></script>
+
+    <script>
+        let hash = window.location.hash;
+        if(hash == "#home"){
+            home()
+        }else if(hash == "#login"){
+            login()
+        }
+        function checkLocation(){
+            
+            let current = window.location.hash; //url
+            //console.log(hash);
+            if(current !=hash){
+                hash = current;
+                if(hash == "#home"){
+                    home()
+                }else if(hash == "#login"){
+                    login()
+                }
+            }
+
+        }
+        let changePath = function (path) {
+          let currentPath = window.location.href;
+            //console.log(currentPath);
+          window.location.href = currentPath.replace(/#(.*)$/, '') + '#'+ path;
+        }
+
+        
+        window.addEventListener("popstate",function(event){
+            let currState= event.state;
+            console.log("state POPPED!")
+            console.log(currState);
+            console.log("the state is above!")
+            //change the route/ page look
+        })
+
+        function home(){
+            console.log("Go HOME!")
+            console.log(window.history.state)
+            document.getElementById("homeRout").style.display ="none"
+            document.getElementById("login").style.display = "none"
+            document.getElementById("loginRout").style.display ="block"
+            document.getElementById("home").style.display = "block"
+        }
+        function login(){
+            console.log("Go Login!")
+            console.log(window.history.state)
+            document.getElementById("loginRout").style.display ="none"
+            document.getElementById("home").style.display = "none"
+            document.getElementById("homeRout").style.display ="block"
+            document.getElementById("login").style.display = "block"
+        }
+        document.getElementById("homeRout").addEventListener("click",function(){
+            console.log("HOME state pushed")
+            let history = window.history;
+            history.pushState({ name:"home" } ,"go home" ,"#home" );
+            //history.state;
+            console.log(history.state)
+           
+
+        })
+        document.getElementById("loginRout").addEventListener("click",function(){
+            console.log("login state pushed")
+            let history = window.history;
+            history.pushState({ name:"login" } ,"go login","#login" );
+            //history.state;
+            console.log(history.state)
+            history.go(0)
+        })
+        // checkLocation()
+        setInterval(checkLocation,200);
+    </script>
+</body>
+</html>

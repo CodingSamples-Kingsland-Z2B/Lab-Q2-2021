@@ -1,0 +1,21 @@
+{
+  "name": "webpack-course",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "keywords": [],
+  "author": "William Abboud <william.abboud6669@gmail.com>",
+  "license": "ISC",
+  "scripts": {
+    "start-server": "npx webpack-dev-server --open",
+    "build": "npx webpack"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.8.0"
+  }
+}
