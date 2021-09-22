@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/team.css">
+    <link rel="stylesheet" type="text/css" href="css/details.css">
+    <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <title>Team Managers App</title>
+  </head>
+  <body>
+
+    <!-- <div id="main">
+    </div> -->
+
+    <div id="infoBox" class="notification" disabled></div>
+    <div id="errorBox" class="notification" disabled></div>
+    <div id="main">
+
+    </div>
+
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./node_modules/handlebars/dist/handlebars.min.js"></script>
+    <script src="./node_modules/sammy/lib/min/sammy-0.7.6.min.js"></script>
+    <script src="./node_modules/sammy/lib/min/plugins/sammy.handlebars-0.7.6.min.js"></script>
+    
+    <!-- Helpers -->
+    <script src="./helpers/requester.js"></script>
+    <script src="./helpers/storage.js"></script>
+    <script src="./helpers/helper.js"></script>
+
+    <!-- Controllers -->
+    <script src="./controllers/homeController.js"></script>
+    <script src="./controllers/userController.js"></script>
+
+    <!-- Models -->
+    <script src='./models/userModel.js'></script>
+
+    <!-- App -->
+    <script src="./scripts/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+{{> header}}
+<div class="container">
+	<div class="row space-top">
+		<div class="col-md-12">
+			<h1>Welcome to Furniture System</h1>
+			<p>Select furniture from the catalog to view details.</p>
+		</div>
+	</div>
+	<div class="row space-top">
+		{{#each furniture}}
+			<div class="col-md-4">
+				<div class="card text-white bg-dark">
+					<div class="card-body">
+						<blockquote class="card-blockquote">
+							<img src="{{imageUrl}}" />
+							<p>{{description}}</p>
+							<footer>Someone famous in
+								<cite title="{{year}}">{{year}}</cite>
+							</footer>
+							<div class="pull-right">
+								<a
+									href="#/details/{{id}}"
+									class="btn btn-info"
+								>Details</a>
+							</div>
+						</blockquote>
+					</div>
+				</div>
+			</div>
+		{{/each}}
+	</div>
+</div>

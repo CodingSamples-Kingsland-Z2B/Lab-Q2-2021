@@ -1,0 +1,23 @@
+{
+    "name": "name",
+    "description": "description",
+    "authors": "author",
+    "version": "1.0.0",
+    "main": "pathToMain",
+    "dependencies": {
+        "bootstrap": "^4.3.1",
+        "handlebars": "^4.1.2",
+        "jquery": "^3.4.1",
+        "sammy": "^0.7.6"
+    },
+    "devDependencies": {
+        "webpack": "^4.39.1",
+        "webpack-cli": "^3.3.6",
+        "webpack-dev-server": "^3.8.0"
+    },
+    "scripts": {
+        "start": "npx webpack-dev-server --open",
+        "build": "npx webpack",
+        "watch": "npx webpack --watch"
+    }
+}
