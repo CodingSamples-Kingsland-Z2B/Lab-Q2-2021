@@ -1,0 +1,1 @@
+console.log("HEY I'm the home page js file");
