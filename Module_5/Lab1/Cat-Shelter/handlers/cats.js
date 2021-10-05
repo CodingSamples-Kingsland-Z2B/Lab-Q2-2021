@@ -235,8 +235,74 @@ module.exports = (req, res) => {
 		});
 	} else if (pathName.includes("cats/new-home") && req.method === "GET") {
         //todo
+        ///cats/new-home/{{id}}
+        let id = pathName.split("/");
+		id = id[id.length - 1];
+		let pagePath = path.normalize(
+			path.join(__dirname, "../views/catShelter.html")
+		);
+		fs.readFile(pagePath, (err, html) => {
+			if (err) {
+				console.log(err);
+				res.writeHeader(404, {
+					"Content-Type": "text/plain",
+				});
+				res.write("404 Error HTML FILE NOT FOUND");
+				res.end();
+				return;
+			}
+			fs.readFile(
+				path.join(__dirname, "../views/templates/breed-option.html"),
+				(err, template) => {
+					let	currCat = catsDB.find((cat) => {
+						return cat.id == id;
+					});
+					let keys = Object.keys(currCat);
+					for (let key of keys) {
+						while (html.toString().includes(`{{${key}}}`)) {
+							html = html
+								.toString()
+								.replace(`{{${key}}}`, currCat[key] || "");
+						}
+					}
+					//console.log(html);
+					//console.log(output);
+					res.writeHeader(200, {
+						"Content-Type": "text/html",
+					});
+					res.write(html);
+					res.end();
+				}
+			);
+		});
 	} else if (pathName.includes("cats/new-home") && req.method === "POST") {
         //todo
+        ///cats/new-home/{{id}}
+        //removing the cat form the db
+        let id = pathName.split("/");
+		id = id[id.length - 1];
+
+        //read in the db.
+        //change the array removing the id that is in the url
+        //overwrite the db
+        fs.readFile("./db/cats.json", "utf8", (err, data) => {
+            if (err) throw err;
+            // console.log("Uploading cat data");
+            let cats = JSON.parse(data);
+            catID = id;
+            cats = cats.filter((cat)=> cat.id != catID);
+            
+            
+            console.log(cats);
+            let json = JSON.stringify(cats);
+            fs.writeFile("./db/cats.json", json, (err) => {
+                if (err) throw err;
+                //console.log("Data uploaded successfully");
+                res.writeHeader(302, { location: "/" });
+                res.end();
+            });
+        });
+
 	} else {
 		return false;
 	}
