@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Attach Accessory</title>
+    <link href="./css/site.css" type="text/css" rel="stylesheet">
+    <link rel='shortcut icon' type='image/x-icon' href='./images/favicon.png' />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <ul>
+                <li><img class="logo" src="/images/logo.png"></li>
+                <li><a href="/">Browse</a></li>
+                <li><a href="/create/cube">Add a Cube</a></li>
+                <li><a href="/create/accessory">Add Accessory</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </header>
+        <main>
+             <h1>{{name}}</h1>
+            <img class="cube" src="{{imgURL}}">
+            <div class="details">
+        <p><span>Description:</span> {{description}}</p>
+        <p><span>Difficulty level:</span> {{difficulty}}</p>
+        <a class="btn" href="/">Back</a>
+        </div>
+            <h2>Accessories</h2>
+            <div class="accessories">
+                {{#each accessories}}
+                <div class="accessory">
+                    <img src="{{imgURL}}" alt="stickerName">
+                    <h3>{{name}}</h3>
+                    <p>{{description}}</p>
+                </div>
+                {{else}}
+                 <h3 class="italic">This cube has no accessories yet...</h3>
+                {{/each}}
+                 
+            </div>
+            <h2><a class="btn" href="/attach/accessory/{{id}}">Attach</a></h2>
+
+        </main>
+    </div>
+    <footer>@Cubicle: Exercise for Express.js and Handlebars</footer>
+</body>
+</html>
