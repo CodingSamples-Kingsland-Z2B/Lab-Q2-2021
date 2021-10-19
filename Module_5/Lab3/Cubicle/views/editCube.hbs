@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Cube Page</title>
+  <link href="./css/site.css" type="text/css" rel="stylesheet">
+  <link rel='shortcut icon' type='image/x-icon' href='./images/favicon.png' />
+</head>
+
+<body>
+  <div class="container">
+   
+    <main>
+	<h1>Edit Cube</h1>
+<div class="form">
+  <form action='/edit/cube/{{id}}' method="POST">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" value="{{name}}">
+    <label for="name">Description</label>
+    <textarea id="name" name="description">{{description}}</textarea>
+    <label for="image">ImageUrl</label>
+    <input type="text" id="image" name="imgURL" value="{{imgURL}}">
+    <label for="difficulty">Difficulty</label>
+    <select id="difficulty" name="difficulty">
+      {{#each options}}
+      <option value="{{num}}" {{sel}}>{{text}}</option>
+      {{/each}}
+      
+    </select>
+    <input type="submit" value="Edit">
+  </form>
+</div>
+    </main>
+  </div>
+  <footer>@Cubicle: Exercise for Express.js and Handlebars</footer>
+
+</body>
+
+</html>

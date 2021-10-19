@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Attach Accessory</title>
+  <link href="./css/site.css" type="text/css" rel="stylesheet">
+  <link rel='shortcut icon' type='image/x-icon' href='./images/favicon.png' />
+</head>
+
+<body>
+  <div class="container">
+    
+    <main>
+      <h1>Attach a new accessory</h1>
+      <div class="form">
+        <h2>Rubiks Cube</h2>
+        <img class="cube" src="{{cubeImg}}">
+        <form action='/attach/accessory/{{id}}' method="POST">
+          <label for="accessory">Accessories</label>
+          <select id="accessory" name="accessory">
+            {{#each accessories}}
+              <option value="{{id}}">{{name}}</option>
+            {{else}}
+             <option class="italic">This cube has all available accessories so far or there is no available at all...</option>
+            {{/each}}
+          </select>
+          <input type="submit" value="Attach">
+        </form>
+        
+        <a class="btn" href="/">Back</a>
+      </div>
+    </main>
+  </div>
+  <footer>@Cubicle: Exercise for Express.js and Handlebars</footer>
+
+</body>
+
+</html>

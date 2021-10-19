@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Register Page</title>
+  <link href="./css/site.css" type="text/css" rel="stylesheet">
+  <link rel='shortcut icon' type='image/x-icon' href='./images/favicon.png' />
+</head>
+
+<body>
+  <div class="container">
+    
+    <main>
+	<h1>Register Form</h1>
+<div class="form">
+    <form action='/register' method="POST">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" value="{{username}}">
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" val="{{pass}}">
+
+        <label for="repeatPassword">Re-Password</label>
+        <input type="password" id="repeatPassword" name="repeatPassword" val="{{rePass}}">
+        <input type="submit" value="Register">
+    </form>
+</div>
+    </main>
+  </div>
+  <footer>@Cubicle: Exercise for Express.js and Handlebars</footer>
+
+</body>
+
+</html>
