@@ -8,15 +8,15 @@ class Posts extends React.Component {
 	render() {
 		//console.log(links);
 		let limit;
-		if(this.props.limit != undefined){
+		if(this.props.limit !== undefined){
 			limit = Number(this.props.limit)
 		}
 		return (
 			<div className="Posts" >
 				{posts.map((post,index)=>{
 					if(!limit||index<limit){
-						return <Post description={post.description} author={post.author}/>
-					}		
+						return <Post key={index} description={post.description} author={post.author}/>
+					}	
                 })}
 			</div>
 		);

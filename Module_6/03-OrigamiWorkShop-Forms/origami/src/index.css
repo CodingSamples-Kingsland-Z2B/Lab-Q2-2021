@@ -318,7 +318,7 @@ form button {
 .Profile {
     width: 83%;
     display: inline-block;
-    vertical-align: top;
+    /* vertical-align: top; */
     padding: 0.5%;
 
 }
@@ -338,8 +338,14 @@ form button {
 .Profile p{
     text-decoration: underline;
     margin-bottom: 1%;
-}
-
+}    
+.Profile p button{
+    padding: 1%;
+    width: 9%;
+    border-radius: 6px;
+    display: block;
+    margin: 0 auto;
+} 
 .Profile h2{
     color: #234465;
     text-decoration: underline;

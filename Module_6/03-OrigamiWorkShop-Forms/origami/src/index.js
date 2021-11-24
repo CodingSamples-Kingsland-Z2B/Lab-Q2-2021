@@ -1,27 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import Nav from './Components/Nav';
-import Footer from './Components/Footer';
+import SiteStateObj from "./Components/SiteStateObj"
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 
 /* 
   ToDo - Data Make State/ variable data 
           for User login and tracking 
-  ToDo - Cookies? do we need or no
+  ToDo - Cookies - how to handle?
   ToDo - Create helpers for the Fetch API calls
 */
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Nav />
-
-      <App />
-
-      <Footer/>
+      <SiteStateObj/>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
