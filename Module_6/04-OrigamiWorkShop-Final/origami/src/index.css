@@ -1,0 +1,370 @@
+/* App Styles*/
+
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Indie- Flower', cursive;
+}
+
+.App {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.Container {
+    margin-top: 8.5%;
+    padding: 0.5%;
+    /* border: 1px solid purple; */
+    margin-bottom: 0.1%;
+}
+
+/* App Styles*/
+
+/* ------------------------------------------------------------------------------- */
+
+/* Navigation Styles*/
+
+.Navigation {
+    width: 100%;
+    height: 14ch;
+    background-color: #234465;
+    color: white;
+    position: fixed;
+    top: 0;
+    border-bottom: 2px solid #ffa000;
+    border-top: 2px solid #ffa000;
+}
+
+/* Navigation Styles*/
+
+/* ------------------------------------------------------------------------------- */
+
+/* Link Styles */
+
+nav .listItem a {
+    color: white;
+    text-decoration: none;
+}
+
+footer .listItem a {
+    color: #234465;
+    text-decoration: none;
+}
+
+nav .listItem, footer .listItem {
+    display: inline-block;
+    height: auto;
+    margin-right: 2%;
+    cursor: pointer;
+    padding: 0.5%;
+    margin: 0.1%;
+    vertical-align: top;
+}
+
+footer .listItem:nth-child(1) {
+    margin-left: 1%;
+}
+
+nav .listItem:not(:first-child) {
+    padding: 2%;
+    margin-top: 1.5%;
+    border-top: 2px solid #ffa000;
+}
+
+footer .listItem:not(:last-child) {
+    padding: 2%;
+    margin-top: 1.5%;
+    border-bottom: 2px solid #234465;
+}
+
+nav .listItem:hover {
+    border-top: none;
+    border-bottom: 2px solid #ffa000;
+    font-weight: bold;
+}
+
+footer .listItem:hover {
+    border-bottom: none;
+    border-top: 2px solid #234465;
+    font-weight: bold;
+}
+
+aside .listItem {
+    display: block;
+    width: 98%;
+    border-left: 2px solid #234465;
+    border-right: 2px solid #234465;
+    margin-bottom: 11%;
+    height: 5vh;
+    text-align: center;
+}
+
+aside .listItem a {
+    color: #234465;
+    text-align: center;
+    text-decoration: none;
+    /* padding-top: 5%; */
+    height: 60%;
+    display: block;
+}
+
+aside .listItem:hover {
+    border-left: none;
+    border-right: none;
+    font-weight: bold;
+    border-top: 2px solid #234465;
+    border-bottom: 2px solid #234465;
+    color: #ffa000;
+}
+
+/* Link Styles */
+
+/* ------------------------------------------------------------------------------- */
+
+/* Aside Styles */
+
+.Aside {
+    display: inline-block;
+    width: 15%;
+    margin-right: 1%;
+    height: 89.5vh;
+    /* border:1px solid red; */
+    vertical-align: top;
+}
+
+/* Aside Styles */
+
+/* ------------------------------------------------------------------------------- */
+
+/* Main Styles */
+
+.Main {
+    display: inline-block;
+    width: 83%;
+    height: auto;
+    /* border:1px solid blue; */
+    margin-bottom: 5%;
+}
+
+h1 {
+    text-align: center;
+    color: #234465;
+    text-decoration: underline;
+    margin-bottom: 2%;
+}
+
+/* Main Styles */
+
+/* ------------------------------------------------------------------------------- */
+
+/* Posts Styles */
+
+.Posts {
+    width: 100%;
+    /* border:1px solid red; */
+    height: 45vh;
+}
+
+/* Posts Styles */
+
+/* ------------------------------------------------------------------------------- */
+
+/* Post Styles */
+
+.Post {
+    width: 100%;
+    height: auto;
+    border: 1px solid #234465;
+    margin-bottom: 3%;
+    border-radius: 4px;
+}
+
+.description {
+    word-wrap: break-word;
+    padding: 0.5%;
+    font-style: italic;
+    /* border:1px solid blue; */
+    margin-bottom: 0.5%;
+    width: 95%;
+    display: inline-block;
+    vertical-align: top;
+    ;
+}
+
+.Post div {
+    /* border:1px solid red; */
+    height: auto;
+    text-align: right;
+    margin-bottom: 0.5%;
+}
+
+.Post div span {
+    text-decoration: underline;
+    text-align: right;
+    /* border:1px solid green; */
+    padding-right: 1%;
+}
+
+.Post img {
+    width: 32px;
+    height: 32px;
+}
+
+/* Post Styles */
+
+
+/* Footer Styles */
+
+.Footer {
+    width: 100%;
+    height: 20ch;
+    background-color: #ffa000;
+    color: #234465;
+    border-top: 2px solid #234465;
+    border-bottom: 2px solid #234465;
+    margin-bottom: 1%;
+}
+
+.Footer p {
+    text-align: center;
+    font-weight: bold;;
+}
+
+/* Footer Styles */
+
+/* Input Styles */
+
+.Input {
+    display: inline-block;
+    padding: 0.5%;
+    width: 83%;
+}
+textarea {
+    width: 40%;
+    display: block;
+    margin: 0 auto;
+    resize: none;
+    padding: 2%;
+    height: 10vh;
+    font-style: italic;
+    border-radius: 6px;
+    border:1px solid #234465;
+    color: #234465;
+}
+button{
+    background-color: #234465;
+    color: white;
+    padding: 1%;
+    width: 7%;
+    border-radius: 6px;
+    display: block;
+    margin: 0 auto;
+    border:none;
+    margin-top: 0.5%;
+    border: 2px solid white;
+    margin-bottom: 2%;
+}
+button:hover{
+    background-color: white;
+    border: 2px solid #234465;
+    color: #234465;
+    font-style: italic;
+}
+.Input h2{
+    color: #234465;
+    text-decoration: underline;
+}
+
+/* Input Styles */
+
+/* Register & Login */
+.Login, .Register {
+    width: 83%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.form-control {
+    width: 30%;
+    margin: 0 auto;
+    padding: 1%;
+    text-align: center;
+}
+
+label {
+    float: left;
+    width: 30%;
+    text-align: right;
+}
+
+input {
+    text-align: center;
+    border:1px solid #234465;
+    padding: 1%;
+    width: 50%;
+    border-radius: 6px;
+    color: #234465;
+}
+
+form button {
+    width: auto;
+    padding: 2%;
+}
+/* Register & Login */
+
+/* Profile */
+
+.Profile {
+    width: 83%;
+    display: inline-block;
+    /* vertical-align: top; */
+    padding: 0.5%;
+
+}
+.Profile img {
+    max-width: 265px;
+    margin: 0 auto;
+    display: block;
+}
+.Profile .personal-info{
+    vertical-align: top;
+    padding: 10px;
+    margin: 0 auto;
+    color: #234465;
+    width: 50%;
+    text-align: center;
+}
+.Profile p{
+    text-decoration: underline;
+    margin-bottom: 1%;
+}    
+.Profile p button{
+    padding: 1%;
+    width: 9%;
+    border-radius: 6px;
+    display: block;
+    margin: 0 auto;
+} 
+.Profile h2{
+    color: #234465;
+    text-decoration: underline;
+}
+
+/* Profile */
+
+/* FourOFour */
+
+.FourOFour{
+    width: 83%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.FourOFour img{
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+}
+    
+/* FourOFour */
